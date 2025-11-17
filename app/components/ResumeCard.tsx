@@ -1,9 +1,8 @@
 import ScoreCircle from "~/components/ScoreCircle";
-import { Link } from "react-router";
 
 const ResumeCard = ({resume:{id,companyName, jobTitle, imagePath, feedback,}}: {resume:Resume}) => {
   return (
-    <Link to={`/resume/${id}`} className="resume-card animate-in fade-in duration-1000">
+    <div className="resume-card animate-in fade-in duration-1000">
       <div className="resume-card-header">
         <div className="flex flex-col gap-2">
           <h2 className="!text-black font-bold break-words">{companyName}</h2>
@@ -16,13 +15,13 @@ const ResumeCard = ({resume:{id,companyName, jobTitle, imagePath, feedback,}}: {
       <div className="gradient-border animated-in duration-1000">
         <div className="w-full h-full">
           <img
-            src={`/${imagePath}`} // ← Change from resume.feedback.imagePath
+            src={`/${imagePath}`}
             alt={`${companyName} - ${jobTitle}`}
             className="w-full h-[350px] max-sm:h-[200px] object-cover object-top"
           />
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
